@@ -1,0 +1,58 @@
+\doxysection{Custom\+Login\+Success\+Handler.\+java}
+\hypertarget{_custom_login_success_handler_8java_source}{}\label{_custom_login_success_handler_8java_source}\index{java/org/zerock/security/CustomLoginSuccessHandler.java@{java/org/zerock/security/CustomLoginSuccessHandler.java}}
+\mbox{\hyperlink{_custom_login_success_handler_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00001}00001\ \textcolor{keyword}{package\ }org.zerock.security;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00004}00004\ \textcolor{keyword}{import}\ java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00005}00005\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00007}00007\ \textcolor{keyword}{import}\ javax.servlet.ServletException;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00008}00008\ \textcolor{keyword}{import}\ javax.servlet.http.HttpServletRequest;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00009}00009\ \textcolor{keyword}{import}\ javax.servlet.http.HttpServletResponse;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00011}00011\ \textcolor{keyword}{import}\ org.springframework.security.core.Authentication;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00012}00012\ \textcolor{keyword}{import}\ org.springframework.security.web.authentication.AuthenticationSuccessHandler;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00014}00014\ \textcolor{keyword}{import}\ lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00016}00016\ @Log4j}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00017}\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_login_success_handler}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_login_success_handler}{CustomLoginSuccessHandler}}\ \textcolor{keyword}{implements}\ AuthenticationSuccessHandler\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00020}00020\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00021}\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_login_success_handler_a43702827b6b3b03955a53d080723dae5}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_login_success_handler_a43702827b6b3b03955a53d080723dae5}{onAuthenticationSuccess}}(HttpServletRequest\ request,\ HttpServletResponse\ response,\ Authentication\ auth)}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throws}\ IOException,\ ServletException\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00024}00024\ \ \ \ \ \ \ \ \ log.warn(\textcolor{stringliteral}{"{}Login\ Success"{}});}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ List<String>\ roleNames\ =\ \textcolor{keyword}{new}\ ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ auth.getAuthorities().forEach(authority\ -\/>\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ roleNames.add(authority.getAuthority());}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00032}00032\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00034}00034\ \ \ \ \ \ \ \ \ log.warn(\textcolor{stringliteral}{"{}ROLE\ NAMES:\ "{}}\ +\ roleNames);}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (roleNames.contains(\textcolor{stringliteral}{"{}ROLE\_ADMIN"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ response.sendRedirect(\textcolor{stringliteral}{"{}/board/index"{}});}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (roleNames.contains(\textcolor{stringliteral}{"{}ROLE\_MEMBER"{}}))\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ response.sendRedirect(\textcolor{stringliteral}{"{}/board/index"{}});}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00048}00048\ \ \ \ \ \ \ \ \ response.sendRedirect(\textcolor{stringliteral}{"{}/board/index"{}});}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_custom_login_success_handler_8java_source_l00052}00052\ }
+
+\end{DoxyCode}

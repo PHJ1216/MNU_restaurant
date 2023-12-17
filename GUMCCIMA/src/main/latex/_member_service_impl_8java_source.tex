@@ -1,0 +1,32 @@
+\doxysection{Member\+Service\+Impl.\+java}
+\hypertarget{_member_service_impl_8java_source}{}\label{_member_service_impl_8java_source}\index{java/org/zerock/service/MemberServiceImpl.java@{java/org/zerock/service/MemberServiceImpl.java}}
+\mbox{\hyperlink{_member_service_impl_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00001}00001\ \textcolor{keyword}{package\ }org.zerock.service;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00004}00004\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.springframework.stereotype.Service;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.zerock.domain.MemberVO;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.zerock.mapper.MemberMapper;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00010}00010\ \textcolor{keyword}{import}\ lombok.Setter;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00011}00011\ \textcolor{keyword}{import}\ lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00013}00013\ @Log4j}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00014}00014\ @Service}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00015}\mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl}{MemberServiceImpl}}\ \textcolor{keyword}{implements}\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_member_service}{MemberService}}\ \{}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00018}00018\ \ \ \ \ @Setter(onMethod\_\ =\ @Autowired)}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00019}\mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl_ab854350293a60e41a2630041288f336b}{00019}}\ \ \ \ \ private\ MemberMapper\ \mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl_ab854350293a60e41a2630041288f336b}{membermapper}};}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00021}00021\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00022}\mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl_afdf88f829379a9d6a94fb59944919299}{00022}}\ \ \ \ \ public\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl_afdf88f829379a9d6a94fb59944919299}{signup}}(MemberVO\ member)\ \{}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classorg_1_1zerock_1_1service_1_1_member_service_impl_ab854350293a60e41a2630041288f336b}{membermapper}}.\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_member_service_acaa38eba2de52c7309c62d95dc37c162}{signup}}(member);}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_member_service_impl_8java_source_l00026}00026\ \}}
+
+\end{DoxyCode}

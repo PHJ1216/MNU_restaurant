@@ -1,0 +1,37 @@
+\doxysection{Board\+Service.\+java}
+\hypertarget{_board_service_8java_source}{}\label{_board_service_8java_source}\index{java/org/zerock/service/BoardService.java@{java/org/zerock/service/BoardService.java}}
+\mbox{\hyperlink{_board_service_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00001}\mbox{\hyperlink{namespaceorg_1_1zerock_1_1service}{00001}}\ \textcolor{keyword}{package\ }org.zerock.service;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ java.util.List;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.zerock.domain.BoardAttachVO;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.zerock.domain.BoardVO;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.zerock.domain.Criteria;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.zerock.domain.MemberVO;}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00010}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service}{BoardService}}\ \{}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00012}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_ab6a8c8670b5dcd8d7175d2520c1ecfdc}{00012}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_ab6a8c8670b5dcd8d7175d2520c1ecfdc}{register}}(BoardVO\ board);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00014}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a6f737dbfd2d81843344e1afdf6fd4b8e}{00014}}\ \ \ \ \ \textcolor{keyword}{public}\ BoardVO\ \textcolor{keyword}{get}(Long\ bno);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00016}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a705cb6d11ab5dc186ce0127c5c389998}{00016}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a705cb6d11ab5dc186ce0127c5c389998}{modify}}(BoardVO\ board);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00018}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a014b3556b038b38c11c31c228e3f1a9d}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{boolean}\ \textcolor{keyword}{remove}(Long\ bno);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00020}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a38f1ee0ba844dbc69ab2ade2cfb98850}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ List<BoardVO>\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a38f1ee0ba844dbc69ab2ade2cfb98850}{getList}}();}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00022}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_acb512979ee8ae31ce4bd50843d9c38a7}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ List<BoardVO>\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_acb512979ee8ae31ce4bd50843d9c38a7}{getList}}(Criteria\ cri);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ 추가}}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00025}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_af73c008d2782477fb2441eb008143d76}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_af73c008d2782477fb2441eb008143d76}{getTotal}}(Criteria\ cri);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00027}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a49d75feb82e24d37542922d79155edb4}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ List<BoardAttachVO>\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a49d75feb82e24d37542922d79155edb4}{getAttachList}}(Long\ bno);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00029}\mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a79621aa4d531205e560bd8a2d91ca3b6}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{interfaceorg_1_1zerock_1_1service_1_1_board_service_a79621aa4d531205e560bd8a2d91ca3b6}{removeAttach}}(Long\ bno);}
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_board_service_8java_source_l00031}00031\ \}}
+
+\end{DoxyCode}

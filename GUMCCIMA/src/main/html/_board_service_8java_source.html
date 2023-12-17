@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GUMCCIMA: java/org/zerock/service/BoardService.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">GUMCCIMA<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_board_service_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BoardService.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_board_service_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno"><a class="line" href="namespaceorg_1_1zerock_1_1service.html">    1</a></span><span class="keyword">package </span>org.zerock.service;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> org.zerock.domain.BoardAttachVO;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> org.zerock.domain.BoardVO;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> org.zerock.domain.Criteria;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.zerock.domain.MemberVO;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html">   10</a></span><span class="keyword">public</span> <span class="keyword">interface </span><a class="code hl_interface" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html">BoardService</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#ab6a8c8670b5dcd8d7175d2520c1ecfdc">   12</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#ab6a8c8670b5dcd8d7175d2520c1ecfdc">register</a>(BoardVO board);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a6f737dbfd2d81843344e1afdf6fd4b8e">   14</a></span>    <span class="keyword">public</span> BoardVO <span class="keyword">get</span>(Long bno);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a705cb6d11ab5dc186ce0127c5c389998">   16</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a705cb6d11ab5dc186ce0127c5c389998">modify</a>(BoardVO board);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a014b3556b038b38c11c31c228e3f1a9d">   18</a></span>    <span class="keyword">public</span> <span class="keywordtype">boolean</span> <span class="keyword">remove</span>(Long bno);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a38f1ee0ba844dbc69ab2ade2cfb98850">   20</a></span>    <span class="keyword">public</span> List&lt;BoardVO&gt; <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a38f1ee0ba844dbc69ab2ade2cfb98850">getList</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#acb512979ee8ae31ce4bd50843d9c38a7">   22</a></span>    <span class="keyword">public</span> List&lt;BoardVO&gt; <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#acb512979ee8ae31ce4bd50843d9c38a7">getList</a>(Criteria cri);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// 추가</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#af73c008d2782477fb2441eb008143d76">   25</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#af73c008d2782477fb2441eb008143d76">getTotal</a>(Criteria cri);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a49d75feb82e24d37542922d79155edb4">   27</a></span>    <span class="keyword">public</span> List&lt;BoardAttachVO&gt; <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a49d75feb82e24d37542922d79155edb4">getAttachList</a>(Long bno);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a79621aa4d531205e560bd8a2d91ca3b6">   29</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a79621aa4d531205e560bd8a2d91ca3b6">removeAttach</a>(Long bno);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+</div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html">org.zerock.service.BoardService</a></div><div class="ttdef"><b>Definition</b> <a href="_board_service_8java_source.html#l00010">BoardService.java:10</a></div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_a38f1ee0ba844dbc69ab2ade2cfb98850"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a38f1ee0ba844dbc69ab2ade2cfb98850">org.zerock.service.BoardService.getList</a></div><div class="ttdeci">List&lt; BoardVO &gt; getList()</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_a49d75feb82e24d37542922d79155edb4"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a49d75feb82e24d37542922d79155edb4">org.zerock.service.BoardService.getAttachList</a></div><div class="ttdeci">List&lt; BoardAttachVO &gt; getAttachList(Long bno)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_a705cb6d11ab5dc186ce0127c5c389998"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a705cb6d11ab5dc186ce0127c5c389998">org.zerock.service.BoardService.modify</a></div><div class="ttdeci">boolean modify(BoardVO board)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_a79621aa4d531205e560bd8a2d91ca3b6"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#a79621aa4d531205e560bd8a2d91ca3b6">org.zerock.service.BoardService.removeAttach</a></div><div class="ttdeci">void removeAttach(Long bno)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_ab6a8c8670b5dcd8d7175d2520c1ecfdc"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#ab6a8c8670b5dcd8d7175d2520c1ecfdc">org.zerock.service.BoardService.register</a></div><div class="ttdeci">void register(BoardVO board)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_acb512979ee8ae31ce4bd50843d9c38a7"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#acb512979ee8ae31ce4bd50843d9c38a7">org.zerock.service.BoardService.getList</a></div><div class="ttdeci">List&lt; BoardVO &gt; getList(Criteria cri)</div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_board_service_html_af73c008d2782477fb2441eb008143d76"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_board_service.html#af73c008d2782477fb2441eb008143d76">org.zerock.service.BoardService.getTotal</a></div><div class="ttdeci">int getTotal(Criteria cri)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_1d36fa85a4c40021bc41e20ad60b1a86.html">zerock</a></li><li class="navelem"><a class="el" href="dir_2bb85f31ffe2a1cefde0e53f12ee9bbf.html">service</a></li><li class="navelem"><a class="el" href="_board_service_8java.html">BoardService.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

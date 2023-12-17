@@ -1,0 +1,51 @@
+\doxysection{Criteria.\+java}
+\hypertarget{_criteria_8java_source}{}\label{_criteria_8java_source}\index{java/org/zerock/domain/Criteria.java@{java/org/zerock/domain/Criteria.java}}
+\mbox{\hyperlink{_criteria_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00001}00001\ \textcolor{keyword}{package\ }org.zerock.domain;}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.springframework.web.util.UriComponentsBuilder;}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00005}00005\ \textcolor{keyword}{import}\ lombok.Getter;}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00006}00006\ \textcolor{keyword}{import}\ lombok.Setter;}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00007}00007\ \textcolor{keyword}{import}\ lombok.ToString;}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00009}00009\ @ToString}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00010}00010\ @Setter}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00011}00011\ @Getter}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00012}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria}{Criteria}}\ \{}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00014}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ab72709582f73231284cf03fae8288a30}{00014}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ab72709582f73231284cf03fae8288a30}{pageNum}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00015}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ac5f15e3845bb7e3cfb5c4ba40dbf4126}{00015}}\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ac5f15e3845bb7e3cfb5c4ba40dbf4126}{amount}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00017}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_aa83b73c4a6dd5023f934339a1edae081}{00017}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_aa83b73c4a6dd5023f934339a1edae081}{type}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00018}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a9e16373ab433f73262a395f28ffebf1a}{00018}}\ \ \ \ \ \textcolor{keyword}{private}\ String\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a9e16373ab433f73262a395f28ffebf1a}{keyword}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00020}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a38811b499095e9be643a4045d07ef277}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a38811b499095e9be643a4045d07ef277}{Criteria}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this}(1,\ 10);}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00024}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_afbbfe421498e6d333df5941389e97822}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_afbbfe421498e6d333df5941389e97822}{Criteria}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ab72709582f73231284cf03fae8288a30}{pageNum}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ac5f15e3845bb7e3cfb5c4ba40dbf4126}{amount}})\ \{}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ this.pageNum\ =\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ab72709582f73231284cf03fae8288a30}{pageNum}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ this.amount\ =\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_ac5f15e3845bb7e3cfb5c4ba40dbf4126}{amount}};}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00029}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a9cbac5a2deec88671f8c30f295b43215}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ String[]\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_a9cbac5a2deec88671f8c30f295b43215}{getTypeArr}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_aa83b73c4a6dd5023f934339a1edae081}{type}}\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{keyword}{new}\ String[]\ \{\}\ :\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_aa83b73c4a6dd5023f934339a1edae081}{type}}.split(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00034}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_abd0c785ad8da2f5e5e324a0439434e95}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ String\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria_abd0c785ad8da2f5e5e324a0439434e95}{getListLink}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00036}00036\ \ \ \ \ \ \ \ \ UriComponentsBuilder\ builder\ =\ UriComponentsBuilder.fromPath(\textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .queryParam(\textcolor{stringliteral}{"{}pageNum"{}},\ this.pageNum)}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .queryParam(\textcolor{stringliteral}{"{}amount"{}},\ this.getAmount())}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .queryParam(\textcolor{stringliteral}{"{}type"{}},\ this.getType())}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .queryParam(\textcolor{stringliteral}{"{}keyword"{}},\ this.getKeyword());}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ builder.toUriString();}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_criteria_8java_source_l00045}00045\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\doxysection{Custom\+User\+Details\+Service.\+java}
+\hypertarget{_custom_user_details_service_8java_source}{}\label{_custom_user_details_service_8java_source}\index{java/org/zerock/security/CustomUserDetailsService.java@{java/org/zerock/security/CustomUserDetailsService.java}}
+\mbox{\hyperlink{_custom_user_details_service_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00001}00001\ \textcolor{keyword}{package\ }org.zerock.security;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00003}00003\ \textcolor{keyword}{import}\ org.springframework.beans.factory.annotation.Autowired;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00004}00004\ \textcolor{keyword}{import}\ org.springframework.security.core.userdetails.UserDetails;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00005}00005\ \textcolor{keyword}{import}\ org.springframework.security.core.userdetails.UserDetailsService;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00006}00006\ \textcolor{keyword}{import}\ org.springframework.security.core.userdetails.UsernameNotFoundException;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00007}00007\ \textcolor{keyword}{import}\ org.zerock.domain.MemberVO;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00008}00008\ \textcolor{keyword}{import}\ org.zerock.mapper.MemberMapper;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00009}00009\ \textcolor{keyword}{import}\ org.zerock.security.domain.CustomUser;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00011}00011\ \textcolor{keyword}{import}\ lombok.Setter;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00012}00012\ \textcolor{keyword}{import}\ lombok.extern.log4j.Log4j;}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00014}00014\ @Log4j}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00015}\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service}{CustomUserDetailsService}}\ \textcolor{keyword}{implements}\ UserDetailsService\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00017}00017\ \ \ \ \ @Setter(onMethod\_\ =\ \{\ @Autowired\ \})}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00018}\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service_aae80e2482c9aea75fa0dfb07548519fa}{00018}}\ \ \ \ \ \textcolor{keyword}{private}\ MemberMapper\ \mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service_aae80e2482c9aea75fa0dfb07548519fa}{memberMapper}};}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00020}00020\ \ \ \ \ @Override}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00021}\mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service_ad9337489caec2a2b05a60881765a366b}{00021}}\ \ \ \ \ \textcolor{keyword}{public}\ UserDetails\ \mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service_ad9337489caec2a2b05a60881765a366b}{loadUserByUsername}}(String\ userName)\ \textcolor{keywordflow}{throws}\ UsernameNotFoundException\ \{}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00022}00022\ \ \ \ \ \ \ \ \ log.info(\textcolor{stringliteral}{"{}error\ test111111111"{}});}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00023}00023\ \ \ \ \ \ \ \ \ log.warn(\textcolor{stringliteral}{"{}Load\ User\ By\ UserName\ :\ "{}}\ +\ userName);}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ userName\ means\ userid}}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00026}00026\ \ \ \ \ \ \ \ \ MemberVO\ vo\ =\ \mbox{\hyperlink{classorg_1_1zerock_1_1security_1_1_custom_user_details_service_aae80e2482c9aea75fa0dfb07548519fa}{memberMapper}}.read(userName);}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00028}00028\ \ \ \ \ \ \ \ \ log.warn(\textcolor{stringliteral}{"{}queried\ by\ member\ mapper:\ "{}}\ +\ vo);}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00029}00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vo\ ==\ \textcolor{keyword}{null}\ ?\ null\ :\ \textcolor{keyword}{new}\ CustomUser(vo);}
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00031}00031\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_custom_user_details_service_8java_source_l00033}00033\ \}}
+
+\end{DoxyCode}

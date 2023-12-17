@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GUMCCIMA: java/org/zerock/controller/UploadController.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">GUMCCIMA<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_upload_controller_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">UploadController.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_upload_controller_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>org.zerock.controller;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> java.io.File;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> java.io.FileOutputStream;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> java.io.IOException;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> java.io.UnsupportedEncodingException;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.net.URLDecoder;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> java.net.URLEncoder;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.nio.file.Files;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> java.text.SimpleDateFormat;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> java.util.ArrayList;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">import</span> java.util.Date;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">import</span> java.util.List;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">import</span> java.util.UUID;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">import</span> org.springframework.core.io.FileSystemResource;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> org.springframework.core.io.Resource;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">import</span> org.springframework.http.HttpHeaders;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">import</span> org.springframework.http.HttpStatus;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">import</span> org.springframework.http.MediaType;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">import</span> org.springframework.http.ResponseEntity;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">import</span> org.springframework.security.access.prepost.PreAuthorize;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">import</span> org.springframework.stereotype.Controller;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">import</span> org.springframework.ui.Model;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">import</span> org.springframework.util.FileCopyUtils;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">import</span> org.springframework.web.bind.annotation.PostMapping;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestHeader;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">import</span> org.springframework.web.multipart.MultipartFile;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">import</span> org.zerock.domain.AttachFileDTO;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">import</span> lombok.extern.log4j.Log4j;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">import</span> net.coobird.thumbnailator.Thumbnailator;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>@Controller</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>@Log4j</div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html">   38</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html">UploadController</a> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    @GetMapping(<span class="stringliteral">&quot;/uploadForm&quot;</span>)</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a78ae0dd36f7c1dba8fe99ed87b16a018">   41</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a78ae0dd36f7c1dba8fe99ed87b16a018">uploadForm</a>() {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        log.info(<span class="stringliteral">&quot;upload form&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    @PostMapping(<span class="stringliteral">&quot;/uploadFormAction&quot;</span>)</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a506a4f2d8f6c2e745dabaa1086d870b4">   47</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a506a4f2d8f6c2e745dabaa1086d870b4">uploadFormPost</a>(MultipartFile[] uploadFile, Model model) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        String uploadFolder = <span class="stringliteral">&quot;C:\\upload&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">for</span> (MultipartFile multipartFile : uploadFile) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            log.info(<span class="stringliteral">&quot;-------------------------------------&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            log.info(<span class="stringliteral">&quot;Upload File Name: &quot;</span> + multipartFile.getOriginalFilename());</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            log.info(<span class="stringliteral">&quot;Upload File Size: &quot;</span> + multipartFile.getSize());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            File saveFile = <span class="keyword">new</span> File(uploadFolder, multipartFile.getOriginalFilename());</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                multipartFile.transferTo(saveFile);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                log.error(e.getMessage());</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            } <span class="comment">// end catch</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        } <span class="comment">// end for</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    @PreAuthorize(<span class="stringliteral">&quot;isAuthenticated()&quot;</span>)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    @GetMapping(<span class="stringliteral">&quot;/uploadAjax&quot;</span>)</div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a4f20cc54b8d93c49a034b8114ba3edda">   70</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a4f20cc54b8d93c49a034b8114ba3edda">uploadAjax</a>() {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        log.info(<span class="stringliteral">&quot;upload ajax&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#ad656fa49337a4741343de89a243f8068">   74</a></span>    <span class="keyword">private</span> String <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#ad656fa49337a4741343de89a243f8068">getFolder</a>() {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="stringliteral">&quot;yyyy-MM-dd&quot;</span>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        Date date = <span class="keyword">new</span> Date();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        String str = sdf.format(date);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> str.replace(<span class="stringliteral">&quot;-&quot;</span>, File.separator);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a95ecdfa9d53d2944dfab648b04b0fdc1">   85</a></span>    <span class="keyword">private</span> <span class="keywordtype">boolean</span> <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a95ecdfa9d53d2944dfab648b04b0fdc1">checkImageType</a>(File file) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            String contentType = Files.probeContentType(file.toPath());</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            <span class="keywordflow">return</span> contentType.startsWith(<span class="stringliteral">&quot;image&quot;</span>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    @PreAuthorize(<span class="stringliteral">&quot;isAuthenticated()&quot;</span>)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    @PostMapping(value = <span class="stringliteral">&quot;/uploadAjaxAction&quot;</span>, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    @ResponseBody</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a2f8b71757a6b2d7e24eea1a15b906182">  103</a></span>    <span class="keyword">public</span> ResponseEntity&lt;List&lt;AttachFileDTO&gt;&gt; <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a2f8b71757a6b2d7e24eea1a15b906182">uploadAjaxPost</a>(MultipartFile[] uploadFile) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        List&lt;AttachFileDTO&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        String uploadFolder = <span class="stringliteral">&quot;C:\\upload&quot;</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        String uploadFolderPath = <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#ad656fa49337a4741343de89a243f8068">getFolder</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="comment">// make folder --------</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        File uploadPath = <span class="keyword">new</span> File(uploadFolder, uploadFolderPath);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (uploadPath.exists() == <span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            uploadPath.mkdirs();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="comment">// make yyyy/MM/dd folder</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">for</span> (MultipartFile multipartFile : uploadFile) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            AttachFileDTO attachDTO = <span class="keyword">new</span> AttachFileDTO();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            String uploadFileName = multipartFile.getOriginalFilename();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="comment">// IE has file path</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            uploadFileName = uploadFileName.substring(uploadFileName.lastIndexOf(<span class="stringliteral">&quot;\\&quot;</span>) + 1);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            log.info(<span class="stringliteral">&quot;only file name: &quot;</span> + uploadFileName);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            attachDTO.setFileName(uploadFileName);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            UUID uuid = UUID.randomUUID();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            uploadFileName = uuid.toString() + <span class="stringliteral">&quot;_&quot;</span> + uploadFileName;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                File saveFile = <span class="keyword">new</span> File(uploadPath, uploadFileName);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                multipartFile.transferTo(saveFile);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                attachDTO.setUuid(uuid.toString());</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                attachDTO.setUploadPath(uploadFolderPath);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                <span class="comment">// check image type file</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a95ecdfa9d53d2944dfab648b04b0fdc1">checkImageType</a>(saveFile)) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                    attachDTO.setImage(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    FileOutputStream thumbnail = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> File(uploadPath, <span class="stringliteral">&quot;s_&quot;</span> + uploadFileName));</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                    Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 100, 100);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    thumbnail.close();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <span class="comment">// add to List</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                list.add(attachDTO);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            } <span class="keywordflow">catch</span> (Exception e) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                e.printStackTrace();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        } <span class="comment">// end for</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(list, HttpStatus.OK);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    @GetMapping(<span class="stringliteral">&quot;/display&quot;</span>)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    @ResponseBody</div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#aeaa9af6c5398e1ff2e82638b32eb4141">  164</a></span>    <span class="keyword">public</span> ResponseEntity&lt;byte[]&gt; <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#aeaa9af6c5398e1ff2e82638b32eb4141">getFile</a>(String fileName) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        log.info(<span class="stringliteral">&quot;fileName: &quot;</span> + fileName);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        File file = <span class="keyword">new</span> File(<span class="stringliteral">&quot;c:\\upload\\&quot;</span> + fileName);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        log.info(<span class="stringliteral">&quot;file: &quot;</span> + file);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        ResponseEntity&lt;byte[]&gt; result = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            HttpHeaders header = <span class="keyword">new</span> HttpHeaders();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            header.add(<span class="stringliteral">&quot;Content-Type&quot;</span>, Files.probeContentType(file.toPath()));</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            result = <span class="keyword">new</span> ResponseEntity&lt;&gt;(FileCopyUtils.copyToByteArray(file), header, HttpStatus.OK);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="comment">// TODO Auto-generated catch block</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    @GetMapping(value = <span class="stringliteral">&quot;/download&quot;</span>, produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    @ResponseBody</div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a603d1222c2d504f1f4134e332af75c74">  188</a></span>    <span class="keyword">public</span> ResponseEntity&lt;Resource&gt; <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a603d1222c2d504f1f4134e332af75c74">downloadFile</a>(@RequestHeader(<span class="stringliteral">&quot;User-Agent&quot;</span>) String userAgent, String fileName) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        Resource resource = <span class="keyword">new</span> FileSystemResource(<span class="stringliteral">&quot;c:\\upload\\&quot;</span> + fileName);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">if</span> (resource.exists() == <span class="keyword">false</span>) {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(HttpStatus.NOT_FOUND);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        String resourceName = resource.getFilename();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="comment">// remove UUID</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        String resourceOriginalName = resourceName.substring(resourceName.indexOf(<span class="stringliteral">&quot;_&quot;</span>) + 1);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        HttpHeaders headers = <span class="keyword">new</span> HttpHeaders();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordtype">boolean</span> checkIE = (userAgent.indexOf(<span class="stringliteral">&quot;MSIE&quot;</span>) &gt; -1 || userAgent.indexOf(<span class="stringliteral">&quot;Trident&quot;</span>) &gt; -1);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>            String downloadName = <span class="keyword">null</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keywordflow">if</span> (checkIE) {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                downloadName = URLEncoder.encode(resourceOriginalName, <span class="stringliteral">&quot;UTF8&quot;</span>).replaceAll(<span class="stringliteral">&quot;\\+&quot;</span>, <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                downloadName = <span class="keyword">new</span> String(resourceOriginalName.getBytes(<span class="stringliteral">&quot;UTF-8&quot;</span>), <span class="stringliteral">&quot;ISO-8859-1&quot;</span>);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            headers.add(<span class="stringliteral">&quot;Content-Disposition&quot;</span>, <span class="stringliteral">&quot;attachment; filename=&quot;</span> + downloadName);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        } <span class="keywordflow">catch</span> (UnsupportedEncodingException e) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ResponseEntity&lt;Resource&gt;(resource, headers, HttpStatus.OK);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    @PreAuthorize(<span class="stringliteral">&quot;isAuthenticated()&quot;</span>)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    @PostMapping(<span class="stringliteral">&quot;/deleteFile&quot;</span>)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    @ResponseBody</div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#addeea71caa922c6920af4cb29c5f94e2">  227</a></span>    <span class="keyword">public</span> ResponseEntity&lt;String&gt; <a class="code hl_function" href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#addeea71caa922c6920af4cb29c5f94e2">deleteFile</a>(String fileName, String type) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        log.info(<span class="stringliteral">&quot;deleteFile: &quot;</span> + fileName);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        File file;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            file = <span class="keyword">new</span> File(<span class="stringliteral">&quot;c:\\upload\\&quot;</span> + URLDecoder.decode(fileName, <span class="stringliteral">&quot;UTF-8&quot;</span>));</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            file.delete();</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">if</span> (type.equals(<span class="stringliteral">&quot;image&quot;</span>)) {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                String largeFileName = file.getAbsolutePath().replace(<span class="stringliteral">&quot;s_&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                log.info(<span class="stringliteral">&quot;largeFileName: &quot;</span> + largeFileName);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                file = <span class="keyword">new</span> File(largeFileName);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                file.delete();</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        } <span class="keywordflow">catch</span> (UnsupportedEncodingException e) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            e.printStackTrace();</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ResponseEntity&lt;&gt;(HttpStatus.NOT_FOUND);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> ResponseEntity&lt;String&gt;(<span class="stringliteral">&quot;deleted&quot;</span>, HttpStatus.OK);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
+</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
+</div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html">org.zerock.controller.UploadController</a></div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00038">UploadController.java:38</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a2f8b71757a6b2d7e24eea1a15b906182"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a2f8b71757a6b2d7e24eea1a15b906182">org.zerock.controller.UploadController.uploadAjaxPost</a></div><div class="ttdeci">ResponseEntity&lt; List&lt; AttachFileDTO &gt; &gt; uploadAjaxPost(MultipartFile[] uploadFile)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00103">UploadController.java:103</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a4f20cc54b8d93c49a034b8114ba3edda"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a4f20cc54b8d93c49a034b8114ba3edda">org.zerock.controller.UploadController.uploadAjax</a></div><div class="ttdeci">void uploadAjax()</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00070">UploadController.java:70</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a506a4f2d8f6c2e745dabaa1086d870b4"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a506a4f2d8f6c2e745dabaa1086d870b4">org.zerock.controller.UploadController.uploadFormPost</a></div><div class="ttdeci">void uploadFormPost(MultipartFile[] uploadFile, Model model)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00047">UploadController.java:47</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a603d1222c2d504f1f4134e332af75c74"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a603d1222c2d504f1f4134e332af75c74">org.zerock.controller.UploadController.downloadFile</a></div><div class="ttdeci">ResponseEntity&lt; Resource &gt; downloadFile(@RequestHeader(&quot;User-Agent&quot;) String userAgent, String fileName)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00188">UploadController.java:188</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a78ae0dd36f7c1dba8fe99ed87b16a018"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a78ae0dd36f7c1dba8fe99ed87b16a018">org.zerock.controller.UploadController.uploadForm</a></div><div class="ttdeci">void uploadForm()</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00041">UploadController.java:41</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_a95ecdfa9d53d2944dfab648b04b0fdc1"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#a95ecdfa9d53d2944dfab648b04b0fdc1">org.zerock.controller.UploadController.checkImageType</a></div><div class="ttdeci">boolean checkImageType(File file)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00085">UploadController.java:85</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_ad656fa49337a4741343de89a243f8068"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#ad656fa49337a4741343de89a243f8068">org.zerock.controller.UploadController.getFolder</a></div><div class="ttdeci">String getFolder()</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00074">UploadController.java:74</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_addeea71caa922c6920af4cb29c5f94e2"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#addeea71caa922c6920af4cb29c5f94e2">org.zerock.controller.UploadController.deleteFile</a></div><div class="ttdeci">ResponseEntity&lt; String &gt; deleteFile(String fileName, String type)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00227">UploadController.java:227</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1controller_1_1_upload_controller_html_aeaa9af6c5398e1ff2e82638b32eb4141"><div class="ttname"><a href="classorg_1_1zerock_1_1controller_1_1_upload_controller.html#aeaa9af6c5398e1ff2e82638b32eb4141">org.zerock.controller.UploadController.getFile</a></div><div class="ttdeci">ResponseEntity&lt; byte[]&gt; getFile(String fileName)</div><div class="ttdef"><b>Definition</b> <a href="_upload_controller_8java_source.html#l00164">UploadController.java:164</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_1d36fa85a4c40021bc41e20ad60b1a86.html">zerock</a></li><li class="navelem"><a class="el" href="dir_0adada2d9cdf9125b079b3e2ad93cc02.html">controller</a></li><li class="navelem"><a class="el" href="_upload_controller_8java.html">UploadController.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

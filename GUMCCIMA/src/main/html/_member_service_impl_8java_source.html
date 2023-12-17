@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>GUMCCIMA: java/org/zerock/service/MemberServiceImpl.java 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">GUMCCIMA<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_member_service_impl_8java_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">로딩중...</div>
+<div class="SRStatus" id="Searching">검색중...</div>
+<div class="SRStatus" id="NoMatches">일치하는것 없음</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MemberServiceImpl.java</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_member_service_impl_8java.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>org.zerock.service;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> org.springframework.stereotype.Service;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> org.zerock.domain.MemberVO;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> org.zerock.mapper.MemberMapper;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">import</span> lombok.Setter;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">import</span> lombok.extern.log4j.Log4j;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>@Log4j</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>@Service</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html">   15</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html">MemberServiceImpl</a> <span class="keyword">implements</span> <a class="code hl_interface" href="interfaceorg_1_1zerock_1_1service_1_1_member_service.html">MemberService</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    @Setter(onMethod_ = @Autowired)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#ab854350293a60e41a2630041288f336b">   19</a></span>    private MemberMapper <a class="code hl_variable" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#ab854350293a60e41a2630041288f336b">membermapper</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    @Override</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#afdf88f829379a9d6a94fb59944919299">   22</a></span>    public <span class="keywordtype">void</span> <a class="code hl_function" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#afdf88f829379a9d6a94fb59944919299">signup</a>(MemberVO member) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_variable" href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#ab854350293a60e41a2630041288f336b">membermapper</a>.<a class="code hl_function" href="interfaceorg_1_1zerock_1_1service_1_1_member_service.html#acaa38eba2de52c7309c62d95dc37c162">signup</a>(member);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1service_1_1_member_service_impl_html"><div class="ttname"><a href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html">org.zerock.service.MemberServiceImpl</a></div><div class="ttdef"><b>Definition</b> <a href="_member_service_impl_8java_source.html#l00015">MemberServiceImpl.java:15</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1service_1_1_member_service_impl_html_ab854350293a60e41a2630041288f336b"><div class="ttname"><a href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#ab854350293a60e41a2630041288f336b">org.zerock.service.MemberServiceImpl.membermapper</a></div><div class="ttdeci">MemberMapper membermapper</div><div class="ttdef"><b>Definition</b> <a href="_member_service_impl_8java_source.html#l00019">MemberServiceImpl.java:19</a></div></div>
+<div class="ttc" id="aclassorg_1_1zerock_1_1service_1_1_member_service_impl_html_afdf88f829379a9d6a94fb59944919299"><div class="ttname"><a href="classorg_1_1zerock_1_1service_1_1_member_service_impl.html#afdf88f829379a9d6a94fb59944919299">org.zerock.service.MemberServiceImpl.signup</a></div><div class="ttdeci">void signup(MemberVO member)</div><div class="ttdef"><b>Definition</b> <a href="_member_service_impl_8java_source.html#l00022">MemberServiceImpl.java:22</a></div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_member_service_html"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_member_service.html">org.zerock.service.MemberService</a></div><div class="ttdef"><b>Definition</b> <a href="_member_service_8java_source.html#l00007">MemberService.java:7</a></div></div>
+<div class="ttc" id="ainterfaceorg_1_1zerock_1_1service_1_1_member_service_html_acaa38eba2de52c7309c62d95dc37c162"><div class="ttname"><a href="interfaceorg_1_1zerock_1_1service_1_1_member_service.html#acaa38eba2de52c7309c62d95dc37c162">org.zerock.service.MemberService.signup</a></div><div class="ttdeci">void signup(MemberVO member)</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_93c6ba7fb77bae0709fae89c9c13b44a.html">java</a></li><li class="navelem"><a class="el" href="dir_dbfded582784846724308f9150bf5e72.html">org</a></li><li class="navelem"><a class="el" href="dir_1d36fa85a4c40021bc41e20ad60b1a86.html">zerock</a></li><li class="navelem"><a class="el" href="dir_2bb85f31ffe2a1cefde0e53f12ee9bbf.html">service</a></li><li class="navelem"><a class="el" href="_member_service_impl_8java.html">MemberServiceImpl.java</a></li>
+    <li class="footer">다음에 의해 생성됨 :  <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

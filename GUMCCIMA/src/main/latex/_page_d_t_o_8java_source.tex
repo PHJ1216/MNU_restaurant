@@ -1,0 +1,44 @@
+\doxysection{Page\+DTO.\+java}
+\hypertarget{_page_d_t_o_8java_source}{}\label{_page_d_t_o_8java_source}\index{java/org/zerock/domain/PageDTO.java@{java/org/zerock/domain/PageDTO.java}}
+\mbox{\hyperlink{_page_d_t_o_8java}{이 파일의 문서화 페이지로 가기}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00001}00001\ \textcolor{keyword}{package\ }org.zerock.domain;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00003}00003\ \textcolor{keyword}{import}\ lombok.Getter;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00004}00004\ \textcolor{keyword}{import}\ lombok.ToString;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00006}00006\ @Getter}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00007}00007\ @ToString}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00008}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o}{PageDTO}}\ \{}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00010}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a051bbb8b63bd291c6d34c80aef0a0757}{00010}}\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a051bbb8b63bd291c6d34c80aef0a0757}{startPage}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00011}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_aac6435aadb08f666467f6aab63b3a6d7}{00011}}\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_aac6435aadb08f666467f6aab63b3a6d7}{endPage}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00012}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a53380cf2a1afd91ab5b98e9944211975}{00012}}\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{boolean}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_ae5c3e1de378511f1978ea9d4de8f2414}{prev}},\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a53380cf2a1afd91ab5b98e9944211975}{next}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00014}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_afdf478f87a4c2eb0d56ac0767afe68d7}{00014}}\ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_afdf478f87a4c2eb0d56ac0767afe68d7}{total}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00015}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{00015}}\ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria}{Criteria}}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{cri}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00017}\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a2685587b081799bf49178fcbd3ac457e}{00017}}\ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_a2685587b081799bf49178fcbd3ac457e}{PageDTO}}(\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_criteria}{Criteria}}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{cri}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_afdf478f87a4c2eb0d56ac0767afe68d7}{total}})\ \{}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00019}00019\ \ \ \ \ this.cri\ =\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{cri}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00020}00020\ \ \ \ \ this.total\ =\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_afdf478f87a4c2eb0d56ac0767afe68d7}{total}};}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00022}00022\ \ \ \ \ this.endPage\ =\ (int)\ (Math.ceil(\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{cri}}.getPageNum()\ /\ 10.0))\ *\ 10;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00024}00024\ \ \ \ \ this.startPage\ =\ this.endPage\ -\/\ 9;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ realEnd\ =\ (int)\ (Math.ceil((\mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_afdf478f87a4c2eb0d56ac0767afe68d7}{total}}\ *\ 1.0)\ /\ \mbox{\hyperlink{classorg_1_1zerock_1_1domain_1_1_page_d_t_o_af330bed928a6220c5d57f560e958f9b9}{cri}}.getAmount()));}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (realEnd\ <\ this.endPage)\ \{}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00029}00029\ \ \ \ \ \ \ this.endPage\ =\ realEnd;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00032}00032\ \ \ \ \ this.prev\ =\ this.startPage\ >\ 1;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00034}00034\ \ \ \ \ this.next\ =\ this.endPage\ <\ realEnd;}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00035}00035\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00036}00036\ \ \ }
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{_page_d_t_o_8java_source_l00038}00038\ }
+
+\end{DoxyCode}
